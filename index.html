@@ -24,7 +24,7 @@
         --border: #22222e;
         --accent: #7c6aff;
         --accent2: #00d4aa;
-        --accent3: #ff6b6b;
+        --accent3: #7c6aff;
         --text: #e8e8f0;
         --muted: #6b6b80;
         --tag-bg: #1e1e2e;
@@ -421,6 +421,7 @@
         gap: 1.5rem;
       }
       .project-card {
+        position: relative;
         background: var(--card);
         border: 1px solid var(--border);
         border-radius: 6px;
@@ -447,6 +448,45 @@
       .project-card:hover {
         border-color: rgba(124, 106, 255, 0.4);
         transform: translateY(-4px);
+      }
+      .project-github {
+        position: absolute;
+        top: 1.2rem;
+        right: 1.2rem;
+        font-family: "DM Mono", monospace;
+        font-size: 0.7rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 0.45rem 0.9rem;
+        border: 1px solid var(--accent);
+        color: var(--accent);
+        text-decoration: none;
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        transition: all 0.25s ease;
+      }
+
+      .project-github:hover {
+        background: var(--accent);
+        color: #fff;
+        transform: translateY(-2px);
+      }
+
+      .project-github .arrow {
+        font-size: 0.8rem;
+      }
+
+      /* ── MOBILE BEHAVIOR ── */
+      @media (max-width: 640px) {
+        .project-github {
+          padding: 0.4rem 0.55rem;
+        }
+
+        .project-github span.label {
+          display: none;
+        }
       }
       .project-num {
         font-family: "DM Mono", monospace;
@@ -534,6 +574,7 @@
         gap: 1rem;
       }
       .achieve-card {
+        position: relative;
         background: var(--card);
         border: 1px solid var(--border);
         border-radius: 6px;
@@ -545,6 +586,45 @@
       .achieve-card:hover {
         border-color: var(--accent3);
         transform: translateY(-3px);
+      }
+      .achieve-link {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-family: "DM Mono", monospace;
+        font-size: 0.65rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 0.35rem 0.8rem;
+        border: 1px solid var(--accent3);
+        color: var(--accent3);
+        text-decoration: none;
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+        transition: all 0.25s ease;
+      }
+
+      .achieve-link:hover {
+        background: var(--accent3);
+        color: #fff;
+        transform: translateY(-2px);
+      }
+
+      .achieve-link .arrow {
+        font-size: 0.75rem;
+      }
+
+      /* ── MOBILE BEHAVIOR ── */
+      @media (max-width: 640px) {
+        .achieve-link {
+          padding: 0.35rem 0.5rem;
+        }
+
+        .achieve-link .label {
+          display: none;
+        }
       }
       .achieve-icon {
         font-size: 1.6rem;
@@ -1020,6 +1100,15 @@
       <h2 class="section-title">Projects</h2>
       <div class="projects-grid">
         <div class="project-card reveal">
+          <a
+            href="https://github.com/FirstP0P/networksecurity"
+            target="_blank"
+            class="project-github"
+          >
+            <span class="label">GitHub</span>
+            <span class="arrow">↗</span>
+          </a>
+
           <div class="project-num">01 — Cybersecurity / ML</div>
           <div class="project-title">Phishing Website Detection</div>
           <p class="project-desc">
@@ -1035,6 +1124,15 @@
           </div>
         </div>
         <div class="project-card reveal">
+          <a
+            href="https://github.com/FirstP0P/Insurance-Premium-Prediction"
+            target="_blank"
+            class="project-github"
+          >
+            <span class="label">GitHub</span>
+            <span class="arrow">↗</span>
+          </a>
+
           <div class="project-num">02 — Fintech / ML</div>
           <div class="project-title">Insurance Premium Predictor</div>
           <p class="project-desc">
@@ -1051,6 +1149,15 @@
           </div>
         </div>
         <div class="project-card reveal">
+          <a
+            href="https://github.com/FirstP0P/Pinterest"
+            target="_blank"
+            class="project-github"
+          >
+            <span class="label">GitHub</span>
+            <span class="arrow">↗</span>
+          </a>
+
           <div class="project-num">03 — Full-Stack / Cloud</div>
           <div class="project-title">Pinterest Clone</div>
           <p class="project-desc">
@@ -1154,21 +1261,38 @@
           <div class="achieve-text">Finalist — Codeathon Hackathon VIT</div>
         </div>
         <div class="achieve-card reveal">
+          <div class="achieve-icon">🧩</div>
+          <div class="achieve-text">
+            100+ LeetCode Problems Solved — Proficient in DSA
+          </div>
+        </div>
+        <div class="achieve-card reveal">
+          <a
+            href="https://your-certificate-link.com"
+            target="_blank"
+            class="achieve-link"
+          >
+            <span class="label">View</span>
+            <span class="arrow">↗</span>
+          </a>
           <div class="achieve-icon">📜</div>
           <div class="achieve-text">
             Complete MLOps Bootcamp — 10+ End-to-End ML Projects
           </div>
         </div>
         <div class="achieve-card reveal">
+          <a
+            href="https://your-certificate-link.com"
+            target="_blank"
+            class="achieve-link"
+          >
+            <span class="label">View</span>
+            <span class="arrow">↗</span>
+          </a>
+
           <div class="achieve-icon">☁️</div>
           <div class="achieve-text">
             Oracle Cloud Infrastructure 2025 — Certified Foundations Associate
-          </div>
-        </div>
-        <div class="achieve-card reveal">
-          <div class="achieve-icon">🧩</div>
-          <div class="achieve-text">
-            100+ LeetCode Problems Solved — Proficient in DSA
           </div>
         </div>
       </div>
@@ -1242,7 +1366,9 @@
             <span class="contact-link-icon">in</span>
             <div>
               <span class="contact-link-label">LinkedIn</span>
-              <span class="contact-link-val">linkedin.com/in/anish-nakhale-b576a8257</span>
+              <span class="contact-link-val"
+                >linkedin.com/in/anish-nakhale-b576a8257</span
+              >
             </div>
           </a>
           <a
